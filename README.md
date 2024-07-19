@@ -42,7 +42,7 @@ Run the script:
 
 ## Estimated Views
 
-If left running for 1 hour, the script is expected to generate approximately 20.000+ Views into your profile
+I tested it, per minute you get 300 views, that means 300 * 60 = 18.000 or 18k Views per hour.
 
 ## Important Notice
 
