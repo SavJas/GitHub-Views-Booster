@@ -42,25 +42,7 @@ Run the script:
 
 ## Estimated Views
 
-If left running for 1 hour, the script is expected to generate approximately:
-
-### High Rate
-- **Duration:** 8 seconds
-- **Rate:** 100 visits/second
-- **Visits per Duration:** 8 seconds * 100 visits/second = 800 visits
-
-### Slow Rate
-- **Duration:** 5 seconds
-- **Rate:** 1 visit/2.5 seconds
-- **Visits per Duration:** 5 seconds * (1 visit/2.5 seconds) = 2 visits
-
-### Calculation
-- **One Cycle Duration:** 8 seconds + 5 seconds = 13 seconds
-- **Views per Cycle:** 800 visits + 2 visits = 802 visits
-- **Cycles per Hour:** 3600 seconds / 13 seconds ≈ 276 cycles
-- **Estimated Views per Hour:** 276 cycles * 802 visits ≈ 221,352 views
-
-**Note:** These numbers are theoretical and actual results may vary based on network conditions and rate limiting by GitHub.
+If left running for 1 hour, the script is expected to generate approximately 20.000+ Views into your profile
 
 ## Important Notice
 
