@@ -3,11 +3,9 @@
 This script uses Selenium with multiple threads to visit and refresh a target URL at a high rate for 20 seconds, then slows down for 3 seconds to avoid rate limiting, cycling indefinitely. This approach helps increase the view count on a GitHub profile or repository while mitigating the risk of getting blocked due to excessive traffic.
 ![image](https://github.com/user-attachments/assets/2f66fb7e-b484-4d14-9469-108d3b3c932a)
 
-# I can make it faster, but you will get blocked every time, even with lots of proxies
-
 ## Features
 
-- **High and Low Rate Cycles**: Visits the target URL at a high rate for 8 seconds, followed by a slower rate for 5 seconds.
+- **High and Low Rate Cycles**: Visits the target URL at a high rate for 20 seconds, followed by a slower rate for 3 seconds.
 - **Multi-threaded**: Utilizes multiple threads to maximize the number of visits.
 - **Proxy Support**: Optional use of proxies to distribute traffic and reduce the likelihood of being blocked.
 - **Configurable**: Easily configurable via `config.json` and `proxies.txt` files.
