@@ -35,8 +35,8 @@ def view_page(target_url, use_proxies, proxies):
     service = Service(ChromeDriverManager().install())
     driver = webdriver.Chrome(service=service, options=options)
 
-    high_rate_duration = 8
-    slow_rate_duration = 5
+    high_rate_duration = 22
+    slow_rate_duration = 3
     high_rate_delay = 0.01
     slow_rate_delay = 2.5
 
@@ -70,7 +70,7 @@ def main():
     
     proxies = load_proxies() if use_proxies else []
     
-    num_threads = 10
+    num_threads = 12
     
     threads = []
     
