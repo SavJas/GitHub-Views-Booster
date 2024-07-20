@@ -35,9 +35,9 @@ def view_page(target_url, use_proxies, proxies):
     service = Service(ChromeDriverManager().install())
     driver = webdriver.Chrome(service=service, options=options)
 
-    high_rate_duration = 22
+    high_rate_duration = 20
     slow_rate_duration = 3
-    high_rate_delay = 0.01
+    high_rate_delay = 0.02  # ~50 requests per second
     slow_rate_delay = 2.5
 
     try:
@@ -80,6 +80,7 @@ def main():
         threads.append(thread)
         thread.start()
     
+    # Keep the main thread alive to allow the worker threads to run indefinitely
     try:
         while True:
             time.sleep(1)
