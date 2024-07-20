@@ -19,7 +19,6 @@ def set_proxy(options, proxy):
     options.add_argument(f'--proxy-server={proxy}')
 
 def view_page(target_url, use_proxies, proxies):
-    # Setup Chrome options
     options = Options()
     options.add_argument('--headless')
     options.add_argument('--disable-gpu')
@@ -31,18 +30,16 @@ def view_page(target_url, use_proxies, proxies):
         proxy = random.choice(proxies)
         set_proxy(options, proxy)
 
-    # Initialize WebDriver
     service = Service(ChromeDriverManager().install())
     driver = webdriver.Chrome(service=service, options=options)
 
     high_rate_duration = 20
     slow_rate_duration = 3
-    high_rate_delay = 0.02  # ~50 requests per second
+    high_rate_delay = 0.02
     slow_rate_delay = 2.5
 
     try:
         while True:
-            # High rate phase
             cycle_start_time = time.time()
             while time.time() - cycle_start_time < high_rate_duration:
                 driver.get(target_url)
@@ -50,7 +47,6 @@ def view_page(target_url, use_proxies, proxies):
                 driver.refresh()
                 time.sleep(high_rate_delay)
 
-            # Slow rate phase
             cycle_start_time = time.time()
             while time.time() - cycle_start_time < slow_rate_duration:
                 driver.get(target_url)
@@ -79,8 +75,7 @@ def main():
         thread.daemon = True
         threads.append(thread)
         thread.start()
-    
-    # Keep the main thread alive to allow the worker threads to run indefinitely
+
     try:
         while True:
             time.sleep(1)
